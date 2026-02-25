@@ -19,6 +19,8 @@ let User = class User {
     docNumber;
     miTest;
     miTest2;
+    monica;
+    patty;
 };
 exports.User = User;
 __decorate([
@@ -49,6 +51,14 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', length: 255 }),
     __metadata("design:type", Object)
 ], User.prototype, "miTest2", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 255 }),
+    __metadata("design:type", Object)
+], User.prototype, "monica", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 55 }),
+    __metadata("design:type", Object)
+], User.prototype, "patty", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)()
 ], User);

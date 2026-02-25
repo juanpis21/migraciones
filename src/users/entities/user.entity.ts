@@ -29,4 +29,7 @@ export class User {
 
     @Column({ type: 'varchar', length: 255 })
     monica;
+
+    @Column({ type: 'varchar', length: 55 })
+    patty;
 }

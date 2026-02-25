@@ -6,4 +6,6 @@ export declare class User {
     docNumber: any;
     miTest: any;
     miTest2: any;
+    monica: any;
+    patty: any;
 }
