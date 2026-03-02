@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
+const role_entity_1 = require("../../roles/entities/role.entity");
+const user_role_entity_1 = require("./user-role.entity");
 let User = class User {
     id;
     name;
@@ -21,6 +23,8 @@ let User = class User {
     miTest2;
     monica;
     patty;
+    roles;
+    userRoles;
 };
 exports.User = User;
 __decorate([
@@ -59,6 +63,19 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', length: 55 }),
     __metadata("design:type", Object)
 ], User.prototype, "patty", void 0);
+__decorate([
+    (0, typeorm_1.ManyToMany)(() => role_entity_1.Role, role => role.users),
+    (0, typeorm_1.JoinTable)({
+        name: 'user_roles',
+        joinColumn: { name: 'user_id', referencedColumnName: 'id' },
+        inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' }
+    }),
+    __metadata("design:type", Array)
+], User.prototype, "roles", void 0);
+__decorate([
+    (0, typeorm_1.ManyToMany)(() => user_role_entity_1.UserRole, userRole => userRole.user),
+    __metadata("design:type", Array)
+], User.prototype, "userRoles", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)()
 ], User);

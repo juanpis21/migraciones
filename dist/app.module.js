@@ -51,6 +51,7 @@ const config_1 = require("@nestjs/config");
 const Joi = __importStar(require("joi"));
 const enviroments_1 = require("./enviroments");
 const users_module_1 = require("./users/users.module");
+const roles_module_1 = require("./roles/roles.module");
 const config_2 = __importDefault(require("./config"));
 let AppModule = class AppModule {
 };
@@ -71,7 +72,8 @@ exports.AppModule = AppModule = __decorate([
                 }),
             }),
             database_module_1.DatabaseModule,
-            users_module_1.UsersModule
+            users_module_1.UsersModule,
+            roles_module_1.RolesModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

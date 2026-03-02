@@ -24,7 +24,9 @@ let UsersService = class UsersService {
         this.userRepo = userRepo;
     }
     async findAll() {
-        this.users = await this.userRepo.find();
+        this.users = await this.userRepo.find({
+            relations: ['roles']
+        });
         return this.users;
     }
     async findOne(userId) {
