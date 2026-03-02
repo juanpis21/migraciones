@@ -11,7 +11,9 @@ export class UsersService {
     constructor(@InjectRepository(User) private userRepo: Repository<User>){}
 
     async findAll(){
-        this.users = await this.userRepo.find();
+        this.users = await this.userRepo.find({
+            relations:['roles']
+        });
         return this.users;
     }
 
